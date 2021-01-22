@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>            
+        <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="assets/style.css">
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            /* width */
+                ::-webkit-scrollbar {
+                width: 10px;
+                border-radius: 5px;
+                }
+
+                /* Track */
+                ::-webkit-scrollbar-track {
+                background: #000000; 
+                }
+                
+                /* Handle */
+                ::-webkit-scrollbar-thumb {
+                background: #000000; 
+                border-radius: 5px;
+                }
+
+                /* Handle on hover */
+                ::-webkit-scrollbar-thumb:hover {
+                background: #000000; 
+                }
+        </style>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAIChb9qkMcSKWf3gda2B26kyd-Dk8nZsw",
+            authDomain: "chatweb-f0cb7.firebaseapp.com",
+            databaseURL: "https://chatweb-f0cb7.firebaseio.com",
+            projectId: "chatweb-f0cb7",
+            storageBucket: "chatweb-f0cb7.appspot.com",
+            messagingSenderId: "368772977872"
+        };
+        firebase.initializeApp(config);
+        </script>
+        <script type="text/javascript">
+            var database = firebase.database();
+            
+            function send(){
+                var name = document.getElementById("name");
+                var msg = document.getElementById("msg");
+                if (msg.value==""|| name.value==""){
+                    alert("Please fill all details");
+                }
+                else {
+                    var key = database.ref().push().key;
+                    database.ref(key).set({
+                        name:name.value,
+                        msg:msg.value
+                    });
+
+                }
+                name.value="";
+                msg.value="";
+                name.focus();
+            }
+            function scrolll(){
+                    document.getElementById("chat_shower").scrollTop = document.getElementById("chat_shower").scrollHeight;
+            }
+            function increase_opacity(div){
+                
+                $(div).fadeTo(400,1);
+                setInterval(scrolll(div),1000)
+                
+            }
+            //document.getElementById("chat_shower").innerHTML="<div>Loading...</div>";
+            function load_msg(){
+
+                database.ref().on("child_added", function(data){
+                        var div = document.createElement('div');
+                        div.style.opacity="0";
+                        var name = data.val().name;
+                        var msg = data.val().msg;
+                        div.innerHTML="<hr>@"+name+"&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;"+msg+"";
+                        //document.getElementById("chat_shower").appendChild(div);
+                        document.getElementById("chat_shower").append(div);
+                        increase_opacity(div);
+                });
+
+            }
+            load_msg();
+        </script>
+        <img src="assets/Icon_hacker.png" width="75" height="75"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+     <title>AnonymousChat - Privacy 100%</title>
+    <body style="background:#222222;">
+        <div class="container row">
+            <div class="col-md-6"></div>
+            <div class="col-md-4">
+        <br>          
+        <h4 style="color:white;">AnonymousChat</h4>
+        
+        <div id="chat_shower" onload="load_msg();" class="alert alert-primary" role="alert" style="max-height:500px;overflow-y:auto;px-0">
+
+        </div>
+        <input class="form-control form-control-sm my-1" type="text" placeholder="Name" id="name" >
+        <input class="form-control form-control-sm my-1" type="text" placeholder="Message" id="msg">
+        <button onclick="send();" class="btn btn-info">🐱‍👤 Send</button><br><br>    
+            </div>
+            <div class="col-md-4"></div>
+        </div>  
+    </body>
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <img src="assets/Icon_hacker.png" width="75" height=""><h6>About</h6>
+              <p class="text-justify"> 🐱‍👤 AnonymousChat</p>
+            </div>
+  
+            
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Link</h6>
+              <ul class="footer-links">
+                <p><a href="https://github.com/nishikantparmariam/Live-Chat-Web">Based on</a></p>
+            
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2021 All right are reserved 
+           <a href="#">AnonymousChat</a>.
+              </p>
+            </div>
+  
+           
+            </div>
+          </div>
+        </div>
+  </footer>
+</html>
