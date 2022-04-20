@@ -23,7 +23,7 @@ input {
 }
 
 input[type=submit] {
-  background:#D12028;
+  background:#5865F2;
   color:white;
   width: 15%;
   float:left;
@@ -63,7 +63,7 @@ input[type=submit] {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,0) 97%,rgba(255,255,255,0) 100%); /* W3C */
+  background:#5865F2
 }
 
 .messages li {
