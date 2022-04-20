@@ -12,6 +12,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@discord">
 <meta name="twitter:creator" content="@anonymouschat">
+	    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="js/chat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
         <style>
@@ -83,15 +86,26 @@
         <h4 style="color:white;">AnonymousChat</h4>
 	<body class="container">
     <form class="chat-form">
-        <input class="input-box" placeholder="Share your thoughts..." autocomplete="off" />
-        <input type="submit" value="Send">
-    </form>
-		  <div class="chat-box">
-    </div>
-	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-    <script src="index.js"></script>	    
-        
- 
+      <table>
+			<tr>
+				<td><div class="logo2" align="center"><img src="img/logo.jpg" style="width:430px; height:200px"></div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="text" align="center">Utenti Collegati</div></td>
+			</tr>
+			<tr>
+				<td><div id="chatBox"></div></td>
+				<td><textarea id="boxUtenti" cols="20" rows="27" readonly></textarea></td>
+			</tr>
+			<tr>	
+				<td><textarea id="testo" cols="60" rows="2"></textarea></td>
+				<td><button onClick="cancella()">Cancella Chat</button></td>
+			</tr>
+		</table>
+			<br/>
+		<br/>
+			
     <footer class="site-footer">
         <div class="container">
           <div class="row">
