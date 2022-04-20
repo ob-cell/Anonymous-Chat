@@ -12,81 +12,20 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@discord">
 <meta name="twitter:creator" content="@anonymouschat">
-	    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="js/chat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
-        <style>
-            /* width */
-                ::-webkit-scrollbar {
-                width: 10px;
-                border-radius: 5px;
-                }
+	   <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+  <link rel="stylesheet" href="http://hackeryou.com/wp-content/themes/hackeryou/style.css">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+</head>
+<body>
 
-                /* Track */
-                ::-webkit-scrollbar-track {
-                background: #000000; 
-                }
-                
-                /* Handle */
-                ::-webkit-scrollbar-thumb {
-                background: #000000; 
-                border-radius: 5px;
-                }
+<div class="wrapper">
+  <h1>Anonymous chat</h1>
+  <p class="desc">Privacy and security</p>
 
-                /* Handle on hover */
-                ::-webkit-scrollbar-thumb:hover {
-                background: #000000; 
-                }
-		.chat-form {
-    display: flex;
-}
 
-.chat-form *:not(:first-child) {
-    margin-left: 1pc;
-}
-
-.chat-form .input-box {
-    padding: 1pc;
-    flex: 1;
-}
-
-.chat-form input[type=submit] {
-    padding: 1pc;
-    border-radius: 4px;
-    border: solid 1px black;
-}
-
-.chat-box {
-    flex: 1 1 auto;
-}
-
-.chat-box div {
-    background: #eee;
-    box-shadow: 2px 2px 4px #aaa;
-    padding: 1pc;
-    margin-bottom: 0.75pc;
-}
-        </style>
-     
-
-	 
-        <img src="assets/Icon_hacker.png" width="75" height="75"> 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    </head>
-     <title>AnonymousChat - Privacy 100%</title>
-    <body style="background:#222222;">
-	    
-	    
-        <div class="container row">
-            <div class="col-md-6"></div>
-            <div class="col-md-4">
-        <br>          
-        <h4 style="color:white;">Welcome to AnonymousChat</h4>
-		     <p style="color:white;">Make sure to share our website
-          </p>
-	<div class="messagesWrap">
+  <div class="messagesWrap">
     <ul class="messages"></ul>
   </div>
 
@@ -100,9 +39,3 @@
 </div>
   
   <script src="scripts.js"></script>
-    </body>
-        </div>
-        <div class="container">
-          <div class="footer">
-	
-</html>
