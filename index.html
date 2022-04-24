@@ -1,42 +1,37 @@
+<!-- ./public/index.html -->
 <!DOCTYPE html>
 <html>
-    <head>            
-        <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="assets/style.css">
-	    <meta property="og:type" content="website">
-	    <title>AnonymousCha | Secure Chat</title>
-<meta property="og:site_name" content="Anonymous Chat">
-<meta property="og:title" content="Anonymous Chat">
-<meta property="og:description" content="Free Chat, Make Friends, Privacy is our website">
-<meta property="og:image" content="https://imgur.com/amd4Tc1.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@discord">
-<meta name="twitter:creator" content="@anonymouschat">
-	   <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-  <link rel="stylesheet" href="http://hackeryou.com/wp-content/themes/hackeryou/style.css">
-  <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8">
-</head>
-<body>
+  <head>
+    <title>First website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
 
-<div class="wrapper">
-  <h1>Anonymous chat</h1>
-  <p class="desc">Privacy and security</p>
+    Hello world
 
+    <!-- Include jquery, cookies, socket.io (client-side) and your own code -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/cookie_js@1.2.2/cookie.min.js"></script>
+    <script src="https://unpkg.com/socket.io-client@2/dist/socket.io.slim.js"></script>
+    <script src="javascript.js"></script>
+  </body>
+</html>
 
-  <div class="messagesWrap">
-    <ul class="messages"></ul>
-  </div>
+<main>
+  <header>
+    <div class="user-count">0</div>
+    <h1>Tokyo Chat</h1>
+  </header>
 
-  <form action="" class="chat">
-    <input type='text' id='nameInput' placeholder='Username' required maxlength=10> 
-    <input type='text' id='messageInput'  placeholder='Type a message...' required maxlength=140>
-    <input type="submit" value="Send →">
+  <section class="chat">
+    <p><strong>Pepito</strong>: Hey everyone!</p>
+    <p><strong>親日</strong>: こんいちは！</p>
+  </section>
+
+  <form>
+    <input type="text" placeholder="Say something nice" />
+    <button>Send</button>
   </form>
-
-
-</div>
-  
-  <script src="scripts.js"></script>
+</main>
